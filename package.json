@@ -1,0 +1,66 @@
+{
+  "name": "promptitude",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.30.3",
+  "description": "",
+  "author": "Kirk Lin <https://github.com/kirklin>",
+  "license": "MIT",
+  "funding": "https://www.buymeacoffee.com/linkirk",
+  "homepage": "https://github.com/kirklin/promptitude#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirklin/promptitude.git"
+  },
+  "bugs": "https://github.com/kirklin/promptitude/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepublishOnly": "nr build",
+    "release": "bumpp",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "up": "taze major -r -w -I"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.20.0",
+    "@kirklin/eslint-config": "^0.3.2",
+    "@types/node": "^18.15.8",
+    "bumpp": "^9.0.0",
+    "eslint": "^8.36.0",
+    "esno": "^0.16.3",
+    "pnpm": "^7.30.3",
+    "rimraf": "^4.4.1",
+    "taze": "^0.9.1",
+    "typescript": "^5.0.2",
+    "unbuild": "^1.1.2",
+    "vite": "^4.2.1",
+    "vitest": "^0.29.7"
+  }
+}
